@@ -1,0 +1,157 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    background: url("/bg1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Travel Booking Title */
+.booking-title {
+    font-size: 45px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 850px;
+    padding: 20px;
+}
+
+/* Booking Form */
+.booking-form {
+    width: 700px; /* Keep fixed width for large screens */
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Section Styles */
+.section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* Headings */
+h2 {
+    font-size: 15px;
+    color: #333;
+    margin-top: 18px;
+}
+
+h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #fff;
+    cursor: pointer;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #4facfe;
+    box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
+}
+
+/* Align "From" and "To" Fields in One Row (for Large Screens) */
+.travel-details, .passenger-details {
+    display: flex;
+    gap: 15px;
+}
+
+.travel-details .input-group, .passenger-details .input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Book Now Button */
+.submit-btn {
+    width: 50%;
+    max-width: 200px;
+    background: linear-gradient(to right, #4caf50, #0bda61);
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    margin: 20px auto 0;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+/* Loading & Error Messages */
+.loading-text {
+    color: blue;
+    font-size: 14px;
+}
+
+.error-text {
+    color: red;
+    font-size: 14px;
+}
+
+/* RESPONSIVE STYLES FOR SMALL SCREENS */
+@media screen and (max-width: 768px) {
+    .booking-title {
+        font-size: 30px; /* Slightly smaller for better fit */
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .booking-form {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .travel-details, .passenger-details {
+        flex-direction: column; /* Stack inputs vertically */
+    }
+
+    input, select {
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        width: 100%; /* Full width on small screens */
+    }
+}
