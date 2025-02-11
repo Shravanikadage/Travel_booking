@@ -10,6 +10,13 @@ const resolvers = require("./resolvers");
 const app = express();
 app.use(cors());
 
+// CORS for Frontend
+app.use(cors({
+    origin: ["https://travel-booking-frontend-sable.vercel.app"],
+    methods: ["POST"],
+    credentials: true
+}));
+
 async function startServer() {
   try {
     const server = new ApolloServer({ typeDefs, resolvers });
