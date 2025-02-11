@@ -1,4 +1,30 @@
 /* General Styles */
+:root {
+    --primary-bg: #fff;
+    --secondary-bg: #f9f9f9;
+    --text-color: #333;
+    --heading-color: #555;
+    --border-color: #ccc;
+    --input-bg: #fff;
+    --button-bg: linear-gradient(to right, #4caf50, #0bda61);
+    --button-hover-opacity: 0.9;
+    --focus-border: #4facfe;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: #1a1a1a;
+        --secondary-bg: #2a2a2a;
+        --text-color: #ddd;
+        --heading-color: #bbb;
+        --border-color: #444;
+        --input-bg: #333;
+        --button-bg: linear-gradient(to right, #4caf50, #0bda61);
+        --button-hover-opacity: 0.8;
+        --focus-border: #4facfe;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +41,8 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
 }
 
 /* Travel Booking Title */
@@ -36,9 +64,9 @@ body {
 
 /* Booking Form */
 .booking-form {
-    width: 700px; /* Keep fixed width for large screens */
+    width: 700px;
     padding: 30px;
-    background: #fff;
+    background: var(--primary-bg);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -48,7 +76,7 @@ body {
 .section {
     margin-bottom: 20px;
     padding: 15px;
-    background: #f9f9f9;
+    background: var(--secondary-bg);
     border-radius: 8px;
     text-align: left;
 }
@@ -56,14 +84,14 @@ body {
 /* Headings */
 h2 {
     font-size: 15px;
-    color: #333;
+    color: var(--text-color);
     margin-top: 18px;
 }
 
 h3 {
     font-size: 25px;
     margin-bottom: 10px;
-    color: #555;
+    color: var(--heading-color);
 }
 
 /* Input Fields */
@@ -71,16 +99,17 @@ input, select {
     width: 100%;
     padding: 12px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 16px;
-    background: #fff;
+    background: var(--input-bg);
+    color: var(--text-color);
     cursor: pointer;
 }
 
 input:focus, select:focus {
     outline: none;
-    border-color: #4facfe;
+    border-color: var(--focus-border);
     box-shadow: 0 0 5px rgba(79, 172, 254, 0.5);
 }
 
@@ -100,7 +129,7 @@ input:focus, select:focus {
 .submit-btn {
     width: 50%;
     max-width: 200px;
-    background: linear-gradient(to right, #4caf50, #0bda61);
+    background: var(--button-bg);
     color: #fff;
     padding: 12px;
     font-size: 18px;
@@ -113,7 +142,7 @@ input:focus, select:focus {
 }
 
 .submit-btn:hover {
-    opacity: 0.9;
+    opacity: var(--button-hover-opacity);
 }
 
 /* Loading & Error Messages */
@@ -130,7 +159,7 @@ input:focus, select:focus {
 /* RESPONSIVE STYLES FOR SMALL SCREENS */
 @media screen and (max-width: 768px) {
     .booking-title {
-        font-size: 30px; /* Slightly smaller for better fit */
+        font-size: 30px;
     }
 
     .container {
@@ -144,7 +173,7 @@ input:focus, select:focus {
     }
 
     .travel-details, .passenger-details {
-        flex-direction: column; /* Stack inputs vertically */
+        flex-direction: column;
     }
 
     input, select {
@@ -152,6 +181,6 @@ input:focus, select:focus {
     }
 
     .submit-btn {
-        width: 100%; /* Full width on small screens */
+        width: 100%;
     }
 }
